@@ -14,6 +14,7 @@
 
 .input-group button{
     margin-top: 10px;
+    margin-bottom: 20px;
     background: lightgray;
     width: 100%
 }
@@ -24,12 +25,14 @@ form {
 }
 
 .main-table-container {
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow: auto;
 }
 
 table {
-    margin-top: 20px;
+    margin: auto;
 }
 
 table, th, td {

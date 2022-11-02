@@ -1,52 +1,31 @@
 
 
-/*
-create_table = function() {
-    var table = document.createElement("table");
-    var tbody = document.createElement("tbody");
-    for (var i = 0; i < 10; i++) {
-        var tr = document.createElement("tr");
-        for (var j = 0; j < 10; j++) {
-            var td = document.createElement("td");
-            td.appendChild(document.createTextNode(i * j));
-            tr.appendChild(td);
-        }
-        tbody.appendChild(tr);
-    }
-    table.appendChild(tbody);
-    return table;
-}
-*/
 
 create_table = function() {
-    /* var table = document.createElement("table");
-    var tbody = document.createElement("tbody");
-    for (var i = 0; i < 10; i++) {
-        var tr = document.createElement("tr");
-        for (var j = 0; j < 10; j++) {
-            var td = document.createElement("td");
-            td.appendChild(document.createTextNode(i * j));
-            tr.appendChild(td);
-        }
-        tbody.appendChild(tr);
-    }
-    table.appendChild(tbody); */
 
-    var cStartValue = document.getElementById("colStart").value
-    var cEndValue = document.getElementById("colEnd").value
-    var rStartValue = document.getElementById("rowStart").value
-    var rEndValue = document.getElementById("rowEnd").value
+    // Resets the table to prevent more than one table from being created
+    var mainTable = document.querySelector(".main-table-container");
+    mainTable.innerHTML = "";
+
+    var cStartValue = document.getElementById("colMin").value
+    var cEndValue = document.getElementById("colMax").value
+    var rStartValue = document.getElementById("rowMin").value
+    var rEndValue = document.getElementById("rowMax").value
 
     var vals = [cStartValue, cEndValue, rStartValue, rEndValue]
+
+    var minColValue = Math.min(vals[0], vals[1])
+    var maxColValue = Math.max(vals[0], vals[1])
+    var minRowValue = Math.min(vals[2], vals[3])
+    var maxRowValue = Math.max(vals[2], vals[3])
 
     newTable = document.createElement("table")
     newTable.setAttribute("id", "newTable")
     var newTbody = document.createElement("tbody")
-    for (var i = rStartValue; i <= rEndValue; i++) {
+    for (var i = minRowValue; i <= maxRowValue; i++) {
         var tr = document.createElement("tr");
-        for (var j = cStartValue; j <= cEndValue; j++) {
+        for (var j = minColValue; j <= maxColValue; j++) {
             var td = document.createElement("td");
-            // td.appendChild(document.createTextNode(j));
             td.appendChild(document.createTextNode(parseInt(i) * parseInt(j)));
             tr.appendChild(td);
         }
@@ -55,7 +34,7 @@ create_table = function() {
 
     var hRow = document.createElement("tr");
     hRow.appendChild(document.createElement("td"))
-    for (var i = cStartValue; i <= cEndValue; i++) {
+    for (var i = minColValue; i <= maxColValue; i++) {
         var th = document.createElement("th");
         th.appendChild(document.createTextNode(i));
         hRow.appendChild(th);
