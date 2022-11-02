@@ -7,4 +7,4 @@
 
 
 ### Link
-* https://github.com/axwxs/GUI-HW3
+* https://axwxs.github.io/GUI-HW3
