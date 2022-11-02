@@ -1,3 +1,8 @@
+/*
+Full Name: Ali Rashid
+Date Created: 11/2/2022
+ */
+
 
 // Checks if an input value is an integer
 function isInt(value) {
