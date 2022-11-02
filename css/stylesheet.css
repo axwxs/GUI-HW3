@@ -1,0 +1,61 @@
+.page-header {
+    display: flex;
+    justify-content: center;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    margin: 0 auto;
+    /*background: red;*/
+    width: 50%;
+}
+
+.input-group button{
+    margin-top: 10px;
+    background: lightgray;
+    width: 100%
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-table-container {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    margin-top: 20px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: black 1px solid;
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+}
+
+th {
+    background-color: #00818d;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    background-color: #e6e6e6;
+    font-weight: bold;
+}
+
+
+
+
+/*tr:nth-child(even+1) {*/
+/*    background-color: #00818d;*/
+/*}*/
